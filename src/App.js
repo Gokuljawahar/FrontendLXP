@@ -12,7 +12,6 @@ function App() {
         <QuizProvider>
         <Routing />
         </QuizProvider>
-       
       </Provider>
     </div>
   );
