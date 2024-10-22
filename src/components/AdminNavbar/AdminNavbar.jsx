@@ -9,9 +9,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -126,8 +123,8 @@ export default function MiniDrawer() {
 
     localStorage.removeItem("LearnerrowsPerPage");
 
-    localStorage.removeItem("CourserowsPerPage")
-    localStorage.removeItem("rowsPerPage")
+    localStorage.removeItem("CourserowsPerPage");
+    localStorage.removeItem("rowsPerPage");
 
     // Navigate to login page or home page
     navigate("/"); // Replace "/login" with the path to your login page
@@ -229,35 +226,35 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-         <Tooltip title='Home' placement="left-start" arrow>
-         <Link
-            to="/admindashboard"
-            style={{ textDecoration: "none", color: "#27235c" }}
-          >
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+          <Tooltip title="Home" placement="left-start" arrow>
+            <Link
+              to="/admindashboard"
+              style={{ textDecoration: "none", color: "#27235c" }}
+            >
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  <FaHome style={{ color: "#27235c" }} />
-                </ListItemIcon>
-                <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-         </Tooltip>
- 
-          <Tooltip title='LXP Courses' placement="left-start" arrow>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FaHome style={{ color: "#27235c" }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          </Tooltip>
+
+          <Tooltip title="LXP Courses" placement="left-start" arrow>
             <Link
               to="/admincourse"
               style={{ textDecoration: "none", color: "#27235c" }}
@@ -288,7 +285,11 @@ export default function MiniDrawer() {
             </Link>
           </Tooltip>
 
-          <Tooltip title="Individual Learner Details" placement="left-start" arrow>
+          <Tooltip
+            title="Individual Learner Details"
+            placement="left-start"
+            arrow
+          >
             <Link
               to="/learnerviewall"
               style={{ textDecoration: "none", color: "#27235c" }}
@@ -319,8 +320,7 @@ export default function MiniDrawer() {
             </Link>
           </Tooltip>
 
-          <Tooltip title='LXP Report' placement="left-start" arrow>
-
+          <Tooltip title="LXP Report" placement="left-start" arrow>
             <Link
               style={{ textDecoration: "none", color: "#27235c" }}
               to="/report"
@@ -348,16 +348,10 @@ export default function MiniDrawer() {
                   />
                 </ListItemButton>
               </ListItem>
-
             </Link>
           </Tooltip>
-
         </List>
       </Drawer>
-      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-       
-      </Box> */}
     </Box>
   );
 }

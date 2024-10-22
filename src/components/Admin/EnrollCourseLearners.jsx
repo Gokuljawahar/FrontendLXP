@@ -17,7 +17,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Avatar from "@mui/material/Avatar";
+
 import { fetchEnrollCourseLearnerRequest } from "../../actions/Admin/EnrollmentCourseLearners";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -142,11 +142,10 @@ export default function EnrollCourseLearners() {
 
   const ExportExcel = () => {
     const selectedFields = rows.map((row) => ({
-     name: row.name,
+      name: row.name,
       emailId: row.emailId,
-      status: row.status==true?"Finshed":"In Progress",
+      status: row.status == true ? "Finshed" : "In Progress",
     }));
-
 
     const worksheet = XLSX.utils.json_to_sheet(selectedFields);
     const workbook = XLSX.utils.book_new();
@@ -208,7 +207,7 @@ export default function EnrollCourseLearners() {
     orderBy: PropTypes.string.isRequired,
     rowCount: PropTypes.number.isRequired,
   };
-  
+
   //Table and props for toolbar
 
   function EnhancedTableToolbar(props) {

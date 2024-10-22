@@ -3,9 +3,7 @@ import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
-import { FaChartLine } from "react-icons/fa6";
 import DonutSmallRoundedIcon from "@mui/icons-material/DonutSmallRounded";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -35,7 +33,6 @@ const Item = styled(Paper)(({ theme }) => ({
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 }));
 
-// Register the necessary Chart.js components
 ChartJS.register(
   ArcElement,
   LineElement,
